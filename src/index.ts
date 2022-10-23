@@ -1,14 +1,14 @@
-import moment from 'moment';
-function hello(name: string = 'world'): void {
-  // eslint-disable-next-line no-console
-  console.log(`Hello ${name}`);
-  // eslint-disable-next-line no-console
-  console.log(moment());
-}
-function timeout(): void {
-  setTimeout(function () {
-    hello();
-    timeout();
-  }, 1000);
-}
-timeout();
+/* eslint-disable no-console */
+import { program } from 'commander';
+import { findOdd } from './findOdd';
+
+program
+  .version('1.0.0', '-v, --version')
+  .usage('[OPTIONS]...')
+  .option('-i, --input <value>', 'Word for check.')
+  .parse(process.argv);
+
+const options = program.opts();
+
+const result = findOdd(options.input);
+console.log(result);
