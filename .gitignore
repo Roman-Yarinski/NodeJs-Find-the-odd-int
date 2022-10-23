@@ -1,0 +1,16 @@
+
+# Tests
+coverage
+coverage.json
+
+# Lib
+node_modules
+
+# IDE
+.vscode
+
+# Env
+env.ts
+
+# Build
+dist
